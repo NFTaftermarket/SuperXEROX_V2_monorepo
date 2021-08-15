@@ -1,0 +1,39 @@
+{
+  "name": "superxerox2-contract",
+  "version": "0.0.1",
+  "description": "Contracts of the SuperXEROX2 Project",
+  "author": "NFTaftermarket",
+  "license": "MIT",
+  "repository": "NFTaftermarket/superXEROX2",
+  "scripts": {
+    "useEtherspot": "npx hardhat run scripts/use-etherspot.ts",
+    "prepare:nft": "yarn add @openzeppelin/contracts@4.2.0 && rm contracts && ln -s contracts.nft contracts",
+    "prepare:copytoken": "yarn add @openzeppelin/contracts@4.2.0 && rm contracts && ln -s contracts.copytoken contracts",
+    "prepare:bootstrap": "yarn add @openzeppelin/contracts@3.4.1 && rm contracts && ln -s contracts.bootstrap contracts",
+    "deploy:copytoken": "npx hardhat run scripts/deploy-copytoken.js --network ropsten",
+    "deploy:bootstrap": "npx hardhat run scripts/deploy-bootstrap.js --network ropsten",
+    "verify:copytoken": "npx hardhat verify 0xBEd1bb84251dC2f2eb7208dE4bc72950bC636BD9 --network ropsten --contract contracts/CopyToken.sol:CopyToken",
+    "verify:superxerox": "npx hardhat verify 0x34b0f1e2ad834a28da1651cc3c1e27978b74a971 --network ropsten --contract contracts/SuperXerox.sol:SuperXerox --constructor-args arguments-superxerox.js",
+    "verify:bootstrap": "npx hardhat verify 0x9d68dD60aC5496AD6E4bBAdf93875525d8C85D0E --network ropsten --contract contracts/Bootstrap.sol:Bootstrap --constructor-args arguments-bootstrap.js",
+    "test": "npx hardhat test"
+  },
+  "devDependencies": {
+    "@muzamint/hardhat-etherspot": "^0.0.3",
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "chai": "^4.3.4",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.4.4",
+    "etherspot": "^1.15.0",
+    "hardhat": "^2.5.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.3.0",
+    "semver": "^7.3.5",
+    "ts-node": "^10.2.0"
+  },
+  "dependencies": {
+    "@nomiclabs/hardhat-etherscan": "^2.1.4",
+    "@openzeppelin/contracts": "3.4.1",
+    "@superfluid-finance/ethereum-contracts": "^1.0.0-rc.5"
+  }
+}

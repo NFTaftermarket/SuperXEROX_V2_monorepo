@@ -1,0 +1,25 @@
+{
+  "name": "example-superxerox-sdk",
+  "version": "0.0.0",
+  "description": "SDK example for SuperXEROX II",
+  "author": "Ming-der Wang; <mingderwang@gmail.com>",
+  "repository": "mingderwang/example-superxerox-sdk",
+  "main": "index.html",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build dist index.html",
+    "deploy:ipfs": "node scripts/ipfs.js",
+    "deploy:ipfs-infura": "node scripts/ipfs.js",
+    "deploy:ipfs-localhost": "node scripts/ipfs-localhost.js"
+  },
+  "devDependencies": {
+    "ipfs-http-client": "49.0.0",
+    "parcel": "^2.0.0-rc.0",
+    "parcel-bundler": "^1.12.5",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "superxerox-sdk": "link:.."
+  }
+}
